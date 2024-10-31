@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img [src]="urlTienda" alt="Imagen de la tienda" />
+    </ion-avatar>
+    <ion-title>{{ nombreTienda }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/home">Productos</ion-item>
+        <ion-item routerLink="/clientes">Clientes</ion-item>
+        <ion-button (click)="logout()" color="danger">Cerrar Sesión</ion-button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+</ion-content>
